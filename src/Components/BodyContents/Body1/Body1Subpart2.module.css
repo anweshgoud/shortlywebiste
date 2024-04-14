@@ -1,0 +1,21 @@
+.newClass{
+    display: inline-block;
+    padding: 20px 60px 20px 60px; 
+    border: none;
+    background-color:#2acfcf; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 29px; 
+    position: relative;
+    font-size: larger;
+    font-weight: 700;
+
+}
+
+.BuildClass{
+    font-size: 1.8rem;
+    color: grey;
+    line-height: 15px;
+    font-weight: 400;
+}

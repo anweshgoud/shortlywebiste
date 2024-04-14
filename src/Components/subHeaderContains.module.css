@@ -1,0 +1,14 @@
+.Special{
+    font-size: 2rem;
+    color: black;
+    font-family:Poppins,sans-serif;
+    font-weight: 600;
+}
+
+.Normal{
+    font-size: 1rem;
+    color: gray;
+    font-family: Poppins,sans-serif;
+    font-weight: lighter;
+    font-weight: 700;
+}

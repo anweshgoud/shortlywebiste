@@ -1,0 +1,42 @@
+.HeaderMainClass{
+    margin-top: 20px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+}
+
+.HeaderPart1{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Login{
+    margin-left: 20%;
+    justify-content: space-evenly;
+    margin-top: -10px;
+}
+
+.newClass{
+    display: inline-block;
+    padding: 10px 40px 10px 40px; 
+    border: none;
+    background-color:#2acfcf; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px; 
+    position: relative;
+    font-size: larger;
+    font-weight: 700;
+
+}
+
+.normalClass{
+    font-family: Poppins,sans-serif;
+    color: gray;
+    font-weight: 700;
+    border: none;
+    background-color: white;
+    font-size: larger;
+}
