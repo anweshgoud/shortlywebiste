@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const MyContext = createContext(null);
 
@@ -9,8 +9,14 @@ export const MyContextProvider = ({ children }) => {
 
   const addToArray = async (item) => {
     setLongUrl(item);
-    await shortenUrl(item);
-    console.log(myArray);
+    try {
+      const shortenedUrl = await shortenUrl(item);
+      if (shortenedUrl !== "") {
+        setMyArray((prevArray) => [...prevArray, { long: item, short: shortenedUrl }]);
+      }
+    } catch (error) {
+      alert("Error in shorting url")
+    }
   };
 
   const shortenUrl = async (item) => {
@@ -18,7 +24,7 @@ export const MyContextProvider = ({ children }) => {
       const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
         method: "POST",
         headers: {
-          "Authorization": "1b9ce565e904c893dface2110bf96ddfd71e8d2a",
+          Authorization: "Bearer 1b9ce565e904c893dface2110bf96ddfd71e8d2a", 
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ long_url: item }),
@@ -29,18 +35,23 @@ export const MyContextProvider = ({ children }) => {
       }
 
       const data = await response.json();
-      if (data.link !== "") {
-        setMyArray(myArray=>[...myArray,{long:item,short:data.link}]);
-      }
-      console.log(myArray);
+      return data.link !== "" ? data.link : "";
     } catch (error) {
-      console.error("Error shortening URL:", error);
+      alert("Error in shorting url")
+      throw error;
     }
   };
 
+  useEffect(() => {
+  }, [myArray]);
+
   return (
-    <MyContext.Provider value={{ myArray, addToArray, longUrl, shortUrl,shortenUrl }}>
+    <MyContext.Provider value={{ myArray, addToArray, longUrl, shortUrl }}>
       {children}
     </MyContext.Provider>
   );
 };
+
+
+
+

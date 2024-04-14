@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import Body2subpart3 from "./Body2subpart3";
+import { MyContext } from "../../Context/createContext";
+import ArrayLink from "./arrayLinks";
 
 const Body2subpart2 = () => {
+  const { myArray } = useContext(MyContext);
+  
   return (
     <>
       <div
@@ -11,7 +16,7 @@ const Body2subpart2 = () => {
           width: "100%",
         }}
       >
-        {" "}
+        
         <div style={{ marginTop: "8%" }}>
           <p
             style={{
@@ -19,8 +24,14 @@ const Body2subpart2 = () => {
               fontFamily: "sans-serif",
               fontSize: "2.2rem",
               fontWeight: "bolder",
+              marginTop:'2%'
             }}
           >
+            <div style={{}}>
+        {myArray.map((element, index) => (
+          <ArrayLink key={index} element={element} />
+        ))}
+        </div>
             Advanced Statistics
           </p>
           <p
@@ -43,3 +54,4 @@ const Body2subpart2 = () => {
 };
 
 export default Body2subpart2;
+

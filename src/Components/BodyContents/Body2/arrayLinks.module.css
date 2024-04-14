@@ -1,0 +1,22 @@
+.LinksClass{
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.buttonClass{
+    padding: 10px 30px 10px 30px;
+    background-color: #2acfcf;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius:5px
+}
+
+.newbuttonClass{
+    padding: 10px 30px 10px 30px;
+    background-color: darkslateblue;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius:5px
+}
